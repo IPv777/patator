@@ -1,0 +1,72 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>Calculateur de ratio par Maxime</title>
+</head>
+<body onload="calculs();">
+/!\ Mettre des points pour les virgules /!\<br><br><br><br>
+<script type="text/javascript">
+	//Calculateur de ratio par Maxime - JS
+	function calculs(){
+		ch_v = -1;
+		ca_v = -1;
+		//Preview de la chambre
+		//Calcul du volume de la chambre
+		ch_l = eval(document.valeurs.ch_l.value);
+		if(ch_l != undefined){document.valeurs.chambre.width = Math.round(ch_l);}
+		ch_d =  eval(document.valeurs.ch_d.value);
+		if(ch_l != undefined && ch_d != undefined){
+			 ch_v = Math.PI * (ch_d / 2) * (ch_d / 2) * ch_l;
+			 document.valeurs.ch_v.value = Math.round(ch_v * 100) / 100;}
+		//Preview du canon
+		ca_l = eval(document.valeurs.ca_l.value);
+		if(ca_l != undefined){document.valeurs.canon.width = Math.round(ca_l);}
+		//Calcul du volume du canon
+		ca_d =  eval(document.valeurs.ca_d.value);
+		if(ca_l != undefined && ca_d != undefined){
+			 ca_v = Math.PI * (ca_d / 2) * (ca_d / 2) * ca_l;
+			 document.valeurs.ca_v.value = Math.round(ca_v * 100) / 100;}
+		//Calcul du ratio 
+		if(ch_v != -1 && ca_v != -1){
+			ratio = ch_v / ca_v;
+			document.valeurs.ratio.value = Math.round(ratio * 100) / 100;}
+		//Calcul de la réduction
+		if(ch_d != undefined && ca_d != undefined){
+			reduction = ch_d / ca_d;
+			document.valeurs.reduction.value = Math.round(reduction * 100) / 100;}}
+	function lien(){
+	if(ch_d != undefined && ca_d != undefined && ch_l != undefined && ca_l != undefined){prompt("Lien vers les caractéristiques de votre Patator (Ctrl+C pour copier) :", "http://maximesimon.free.fr/ratio/?ch_l="+ch_l+"&ch_d="+ch_d+"&ca_l="+ca_l+"&ca_d="+ca_d);}else{alert("Calculateur de ratio par Maxime");}}
+</script>
+
+<!-- Calculateur de ratio par Maxime - CSS -->
+<style type="text/css">
+	#calculateurderatio table{font-family:Arial;font-size:12px;border-collapse:collapse;border-color:black;}
+	#calculateurderatio td{padding:10px;border-color:black;}
+	#calculateurderatio input{font-size:12px;margin:0px;padding:0px;margin:1px;color:black;}
+	#calculateurderatio .center{text-align:center;}
+	#calculateurderatio img{border:none}
+</style>
+
+<!-- Calculateur de ratio par Maxime - HTML -->
+<form id="calculateurderatio" name="valeurs">
+<table border="1">
+<tbody><tr><td colspan="2" class="center"><a href="javascript:lien();"><img src="Calculateur%20de%20ratio%20par%20Maxime_fichiers/bouchon.png"><img src="Calculateur%20de%20ratio%20par%20Maxime_fichiers/chambre.png" name="chambre" height="17px"><img src="Calculateur%20de%20ratio%20par%20Maxime_fichiers/reducteur.png"><img src="Calculateur%20de%20ratio%20par%20Maxime_fichiers/canon.png" name="canon" height="17px"><img src="Calculateur%20de%20ratio%20par%20Maxime_fichiers/silencieux.png"></a></td></tr>
+<tr>
+	<td>
+		<div class="center"><u>Chambre</u></div><br>
+		Longueur : <input name="ch_l" onkeyup="calculs();" size="6" type="text"> cm<br>
+		Diamètre : <input name="ch_d" onkeyup="calculs();" size="6" type="text"> cm<br>
+		Volume : <input name="ch_v" onkeyup="calculs();" size="6" disabled="disabled" type="text">  cm<sup>3
+	</sup></td>
+	<td>
+		<div class="center"><u>Canon</u></div><br>
+		Longueur : <input name="ca_l" onkeyup="calculs();" size="6" type="text"> cm<br>
+		Diamètre : <input name="ca_d" onkeyup="calculs();" size="6" type="text"> cm<br>
+		Volume : <input name="ca_v" onkeyup="calculs();" size="6" disabled="disabled" type="text"> cm<sup>3
+	</sup></td>
+</tr>
+<tr><td colspan="2" class="center">Ratio : <input size="6" disabled="disabled" name="ratio" type="text">&nbsp;&nbsp;&nbsp;&nbsp;Réduction : <input size="6" disabled="disabled" name="reduction" type="text"></td></tr>
+</tbody></table>
+</form>
+
+
+<iframe style="width: 335px ! important; height: 250px ! important; min-width: 0px; min-height: 0px; display: none; position: fixed; top: 10px; right: 10px; left: auto; border: medium none; background-color: rgb(255, 255, 255); overflow: hidden; z-index: 2147483647; clip: auto; border-radius: 3px; box-shadow: 1px 1px 3px 2px rgb(181, 181, 181);" allowtransparency="true" id="wanteeedPanel"></iframe></body></html>
