@@ -1,5 +1,4 @@
 <html><head>
-<meta http-equiv="content-type" content="text/html; charset=windows-1252">
 <title>Calculateur de ratio par Maxime</title>
 </head>
 <body onload="calculs();">
@@ -29,12 +28,12 @@
 		if(ch_v != -1 && ca_v != -1){
 			ratio = ch_v / ca_v;
 			document.valeurs.ratio.value = Math.round(ratio * 100) / 100;}
-		//Calcul de la réduction
+		//Calcul de la rÃ©duction
 		if(ch_d != undefined && ca_d != undefined){
 			reduction = ch_d / ca_d;
 			document.valeurs.reduction.value = Math.round(reduction * 100) / 100;}}
 	function lien(){
-	if(ch_d != undefined && ca_d != undefined && ch_l != undefined && ca_l != undefined){prompt("Lien vers les caractéristiques de votre Patator (Ctrl+C pour copier) :", "http://maximesimon.free.fr/ratio/?ch_l="+ch_l+"&ch_d="+ch_d+"&ca_l="+ca_l+"&ca_d="+ca_d);}else{alert("Calculateur de ratio par Maxime");}}
+	if(ch_d != undefined && ca_d != undefined && ch_l != undefined && ca_l != undefined){prompt("Lien vers les caractÃ©ristiques de votre Patator (Ctrl+C pour copier) :", "http://maximesimon.free.fr/ratio/?ch_l="+ch_l+"&ch_d="+ch_d+"&ca_l="+ca_l+"&ca_d="+ca_d);}else{alert("Calculateur de ratio par Maxime");}}
 </script>
 
 <!-- Calculateur de ratio par Maxime - CSS -->
@@ -54,19 +53,22 @@
 	<td>
 		<div class="center"><u>Chambre</u></div><br>
 		Longueur : <input name="ch_l" onkeyup="calculs();" size="6" type="text"> cm<br>
-		Diamètre : <input name="ch_d" onkeyup="calculs();" size="6" type="text"> cm<br>
+		DiamÃ¨tre : <input name="ch_d" onkeyup="calculs();" size="6" type="text"> cm<br>
 		Volume : <input name="ch_v" onkeyup="calculs();" size="6" disabled="disabled" type="text">  cm<sup>3
 	</sup></td>
 	<td>
 		<div class="center"><u>Canon</u></div><br>
 		Longueur : <input name="ca_l" onkeyup="calculs();" size="6" type="text"> cm<br>
-		Diamètre : <input name="ca_d" onkeyup="calculs();" size="6" type="text"> cm<br>
+		DiamÃ¨tre : <input name="ca_d" onkeyup="calculs();" size="6" type="text"> cm<br>
 		Volume : <input name="ca_v" onkeyup="calculs();" size="6" disabled="disabled" type="text"> cm<sup>3
 	</sup></td>
 </tr>
-<tr><td colspan="2" class="center">Ratio : <input size="6" disabled="disabled" name="ratio" type="text">&nbsp;&nbsp;&nbsp;&nbsp;Réduction : <input size="6" disabled="disabled" name="reduction" type="text"></td></tr>
+<tr><td colspan="2" class="center">Ratio : <input size="6" disabled="disabled" name="ratio" type="text">&nbsp;&nbsp;&nbsp;&nbsp;RÃ©duction : <input size="6" disabled="disabled" name="reduction" type="text"></td></tr>
 </tbody></table>
 </form>
 
 
-<iframe style="width: 335px ! important; height: 250px ! important; min-width: 0px; min-height: 0px; display: none; position: fixed; top: 10px; right: 10px; left: auto; border: medium none; background-color: rgb(255, 255, 255); overflow: hidden; z-index: 2147483647; clip: auto; border-radius: 3px; box-shadow: 1px 1px 3px 2px rgb(181, 181, 181);" allowtransparency="true" id="wanteeedPanel"></iframe></body></html>
+<iframe style="width: 335px ! important; height: 250px ! important; min-width: 0px; min-height: 0px; display: none; position: fixed; top: 10px; right: 10px; left: auto; border: medium none; background-color: rgb(255, 255, 255); overflow: hidden; z-index: 2147483647; clip: auto; border-radius: 3px; box-shadow: 1px 1px 3px 2px rgb(181, 181, 181);" allowtransparency="true" id="wanteeedPanel">
+	</iframe>
+	</body>
+</html>
